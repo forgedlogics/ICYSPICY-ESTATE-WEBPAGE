@@ -8,7 +8,7 @@ window.addEventListener('scroll', () => {
 
 // ── Scroll reveal — passive, no clicks needed ─────────────
 const revealTargets = document.querySelectorAll(
-  '.fact-card, .why-card, .floor-block, .ph-item, ' +
+  '.fact-card, .why-card, .floor-block, .ph-item, .plan-card, ' +
   '.ideal-item, .distance-row, .faq-flat-item, ' +
   '.specs-table tr, .contact-line'
 );
