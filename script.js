@@ -1,60 +1,77 @@
+'use strict';
+
 // ── Navbar scroll effect ──────────────────────────────────
 const navbar = document.getElementById('navbar');
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 60);
-});
+}, { passive: true });
 
-// ── Mobile menu ───────────────────────────────────────────
-const hamburger = document.getElementById('hamburger');
-const navLinks  = document.querySelector('.nav-links');
-
-hamburger.addEventListener('click', () => {
-  const open = navLinks.style.display === 'flex';
-  navLinks.style.display = open ? 'none' : 'flex';
-  navLinks.style.flexDirection = 'column';
-  navLinks.style.position = 'absolute';
-  navLinks.style.top = '70px';
-  navLinks.style.right = '32px';
-  navLinks.style.background = 'rgba(10,10,10,0.97)';
-  navLinks.style.padding = '24px';
-  navLinks.style.gap = '20px';
-  navLinks.style.backdropFilter = 'blur(12px)';
-  navLinks.style.borderRadius = '4px';
-  if (open) navLinks.style.display = 'none';
-});
-
-// Close mobile menu when a link is clicked
-navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    navLinks.style.display = 'none';
-  });
-});
-
-// ── Smooth reveal on scroll ───────────────────────────────
-const revealEls = document.querySelectorAll(
-  '.about-grid, .amenity, .gallery-item, .dining-grid, .location-grid, .contact-form'
+// ── Scroll reveal — passive, no clicks needed ─────────────
+const revealTargets = document.querySelectorAll(
+  '.fact-card, .gallery-item, .space-card, .why-card, ' +
+  '.ideal-item, .distance-row, .faq-flat-item, ' +
+  '.specs-table tr, .video-item, .contact-line'
 );
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.style.opacity = '1';
+      entry.target.style.opacity   = '1';
       entry.target.style.transform = 'translateY(0)';
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.1 });
+}, { threshold: 0.06, rootMargin: '0px 0px -30px 0px' });
 
-revealEls.forEach(el => {
-  el.style.opacity = '0';
-  el.style.transform = 'translateY(30px)';
-  el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+revealTargets.forEach((el, i) => {
+  el.style.opacity    = '0';
+  el.style.transform  = 'translateY(20px)';
+  el.style.transition = `opacity 0.65s ease ${(i % 5) * 0.08}s, transform 0.65s ease ${(i % 5) * 0.08}s`;
   observer.observe(el);
 });
 
-// ── Contact card hover pulse (optional enhancement) ───────
-document.querySelectorAll('.contact-card').forEach(card => {
-  card.addEventListener('mouseenter', () => {
-    card.style.borderColor = 'var(--gold)';
+// ── Section headings reveal ───────────────────────────────
+document.querySelectorAll('.section h2, .section .eyebrow').forEach(el => {
+  el.style.opacity    = '0';
+  el.style.transform  = 'translateY(14px)';
+  el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+
+  new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      el.style.opacity   = '1';
+      el.style.transform = 'translateY(0)';
+    }
+  }, { threshold: 0.2 }).observe(el);
+});
+
+// ── Instagram-style video reel — tap to play, auto-play on scroll ────────────
+document.querySelectorAll('.reel-item').forEach(item => {
+  const video = item.querySelector('.reel-video');
+  if (!video) return;
+
+  // Auto-play when 60% visible
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        video.play().catch(() => {});
+        item.classList.add('playing');
+      } else {
+        video.pause();
+        item.classList.remove('playing');
+      }
+    });
+  }, { threshold: 0.6 });
+
+  obs.observe(item);
+
+  // Tap to pause / resume
+  item.addEventListener('click', () => {
+    if (video.paused) {
+      video.play().catch(() => {});
+      item.classList.add('playing');
+    } else {
+      video.pause();
+      item.classList.remove('playing');
+    }
   });
 });

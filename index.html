@@ -3,272 +3,438 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ICYSPICY — Vallabh Vidyanagar</title>
+  <title>ICYSPICY — Premium Commercial Property, Vallabh Vidyanagar</title>
+  <meta name="description" content="Premium fully commercial property available for rent and future sale. 21 rooms, ground floor commercial space. Osean Complex, Vallabh Vidyanagar, Gujarat.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <!-- ── NAV ─────────────────────────────────────────────────── -->
+  <!-- ── NAV ──────────────────────────────────────────────── -->
   <nav id="navbar">
     <div class="nav-inner">
-      <div class="nav-logo">ICYSPICY</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
+      <a href="#hero" class="nav-logo">ICYSPICY</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#facts">Overview</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#dining">Commercial</a></li>
-        <li><a href="#residences">Rooms</a></li>
+        <li><a href="#spaces">Spaces</a></li>
         <li><a href="#location">Location</a></li>
-        <li><a href="#contact" class="nav-cta">Enquire</a></li>
+        <li><a href="#specs">Specs</a></li>
+        <li><a href="#why">Why This</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <button class="nav-hamburger" id="hamburger" aria-label="Menu">☰</button>
     </div>
   </nav>
 
-  <!-- ── HERO ────────────────────────────────────────────────── -->
+  <!-- ── HERO — full screen video loop ───────────────────── -->
   <section class="hero" id="hero">
-    <div class="hero-video-wrap">
-      <!-- Replace src with your YouTube embed URL -->
-      <iframe
-        id="heroVideo"
-        src="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_VIDEO_ID&controls=0&showinfo=0&rel=0&modestbranding=1"
-        frameborder="0"
-        allow="autoplay; encrypted-media"
-        allowfullscreen>
-      </iframe>
-      <!-- Fallback gradient shown until video loads -->
-      <div class="hero-fallback"></div>
-    </div>
+    <!-- Video background — place your compressed .mp4 files in /videos/ folder -->
+    <video class="hero-video" autoplay muted loop playsinline poster="images/hero-poster.jpg">
+      <source src="videos/icyspicy-ground-floor.mp4" type="video/mp4">
+    </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <p class="hero-eyebrow">Vallabh Vidyanagar · Gujarat · India</p>
-      <h1 class="hero-title">ICYSPICY</h1>
-      <p class="hero-sub">A landmark mixed-use property in the heart of Vallabh Vidyanagar.<br>Available for rent. Future sale considered.</p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn btn-light">Enquire Now</a>
-        <a href="#gallery" class="btn btn-outline-light">View Property</a>
-      </div>
+      <p class="hero-tag">Sale Considered</p>
+      <h1>ICYSPICY</h1>
+      <p class="hero-address">Osean Complex · University X Road · Vallabh Vidyanagar, Gujarat</p>
+      <p class="hero-line">Premium fully commercial building.<br>Prime location. Immediate possession.</p>
     </div>
-    <a href="#about" class="hero-scroll" aria-label="Scroll down">
-      <span class="scroll-line"></span>
-    </a>
+    <div class="hero-scroll-hint">
+      <span></span>
+    </div>
   </section>
 
-  <!-- ── ABOUT ───────────────────────────────────────────────── -->
-  <section class="section about" id="about">
+  <!-- ── QUICK FACTS ───────────────────────────────────────── -->
+  <section class="section facts-section" id="facts">
     <div class="container">
-      <div class="about-grid">
-        <div class="about-text">
-          <p class="eyebrow">The Property</p>
-          <h2>A rare opportunity in Vallabh Vidyanagar.</h2>
-          <p>ICYSPICY is a fully built, mixed-use commercial and residential property situated within Osean Complex on University X Road — directly opposite Nalini College, one of the most high-footfall locations in Vallabh Vidyanagar.</p>
-          <p>The property comprises a large ground-floor commercial space (formerly a restaurant) and 21 rooms across the upper floors, making it ideal for institutional, hospitality, or residential use. Available for rent immediately. Future sale considered.</p>
-          <div class="about-stats">
-            <div class="stat">
-              <strong>21</strong>
-              <span>Total Rooms</span>
-            </div>
-            <div class="stat">
-              <strong>For Rent</strong>
-              <span>Available Now</span>
-            </div>
-            <div class="stat">
-              <strong>Prime</strong>
-              <span>Location</span>
-            </div>
-          </div>
+      <p class="eyebrow center">At a Glance</p>
+      <h2 class="center">Property Overview</h2>
+      <div class="facts-grid">
+        <div class="fact-card">
+          <div class="fact-icon">🏢</div>
+          <div class="fact-label">Property Type</div>
+          <div class="fact-value">Fully Commercial</div>
         </div>
-        <div class="about-image">
-          <!-- Replace with your image -->
-          <div class="image-placeholder">
-            <span>Property Image</span>
-          </div>
+        <div class="fact-card">
+          <div class="fact-icon">🚪</div>
+          <div class="fact-label">Total Rooms</div>
+          <div class="fact-value">Rooms</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🏗</div>
+          <div class="fact-label">Ground Floor</div>
+          <div class="fact-value">Large Commercial Space</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">📍</div>
+          <div class="fact-label">Location</div>
+          <div class="fact-value">Osean Complex, Vallabh Vidyanagar</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🔑</div>
+          <div class="fact-label">Availability</div>
+          <div class="fact-value">Immediate Possession</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">📋</div>
+          <div class="fact-label">Status</div>
+          <div class="fact-value"> Sale Considered</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">✈️</div>
+          <div class="fact-label">Nearest Airport</div>
+          <div class="fact-value">Vadodara — 40 km</div>
+        </div>
+        <div class="fact-card">
+          <div class="fact-icon">🚆</div>
+          <div class="fact-label">Railway Station</div>
+          <div class="fact-value">Anand Jn — 8 km</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── GALLERY ─────────────────────────────────────────────── -->
+  <!-- ── GALLERY ───────────────────────────────────────────── -->
   <section class="section gallery-section" id="gallery">
     <div class="container">
       <p class="eyebrow center">Visual Tour</p>
-      <h2 class="center">See the Space</h2>
+      <h2 class="center">The Property</h2>
+      <p class="section-sub center">Add your photos by placing image files in the /images/ folder and replacing the placeholders below.</p>
     </div>
     <div class="gallery-grid">
-      <!-- Replace these divs with <img> tags pointing to your photos -->
-      <div class="gallery-item large"><div class="img-placeholder"><span>Hero Shot</span></div></div>
-      <div class="gallery-item"><div class="img-placeholder"><span>Interior 1</span></div></div>
-      <div class="gallery-item"><div class="img-placeholder"><span>Interior 2</span></div></div>
-      <div class="gallery-item"><div class="img-placeholder"><span>Exterior</span></div></div>
-      <div class="gallery-item"><div class="img-placeholder"><span>Restaurant</span></div></div>
-      <div class="gallery-item"><div class="img-placeholder"><span>Residence</span></div></div>
+      <div class="gallery-item large">
+        <img src="images/exterior.jpg" alt="ICYSPICY Exterior" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-caption">Exterior — Road Frontage</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/ground-floor.jpg" alt="Ground Floor Commercial" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-caption">Ground Floor</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/rooms.jpg" alt="Upper Floor Rooms" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-caption">Upper Floor Rooms</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/interior-1.jpg" alt="Interior" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-caption">Interior</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/interior-2.jpg" alt="Interior Detail" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-caption">Interior Detail</div>
+      </div>
+      <div class="gallery-item">
+        <img src="images/parking.jpg" alt="Parking" onerror="this.parentElement.classList.add('placeholder')">
+        <div class="gallery-caption">Parking &amp; Access</div>
+      </div>
     </div>
   </section>
 
-  <!-- ── VIDEO SECTION ──────────────────────────────────────── -->
+  <!-- ── VIDEO SECTION ─────────────────────────────────────── -->
   <section class="section video-section" id="videos">
     <div class="container">
-      <p class="eyebrow center">Walkthroughs</p>
-      <h2 class="center">Experience It</h2>
-      <div class="video-grid">
-        <div class="video-wrap">
-          <!-- Replace YOUR_VIDEO_ID_1 -->
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1?rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
-        </div>
-        <div class="video-wrap">
-          <!-- Replace YOUR_VIDEO_ID_2 -->
-          <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2?rel=0&modestbranding=1" frameborder="0" allowfullscreen></iframe>
+      <p class="eyebrow center">Walkthrough</p>
+      <h2 class="center">Explore the Property</h2>
+    </div>
+    <!-- Instagram-style vertical video reel -->
+    <div class="video-reel">
+
+      <div class="reel-item">
+        <video class="reel-video" loop muted playsinline>
+          <source src="videos/icyspicy-ground-floor.mp4" type="video/mp4">
+        </video>
+        <div class="reel-label">
+          <span class="reel-floor">Ground Floor</span>
+          <span class="reel-desc">Commercial space — direct road frontage</span>
         </div>
       </div>
+
+      <div class="reel-item">
+        <video class="reel-video" loop muted playsinline>
+          <source src="videos/icyspicy-1st-floor.mp4" type="video/mp4">
+        </video>
+        <div class="reel-label">
+          <span class="reel-floor">1st Floor</span>
+          <span class="reel-desc">Upper commercial rooms</span>
+        </div>
+      </div>
+
+      <div class="reel-item">
+        <video class="reel-video" loop muted playsinline>
+          <source src="videos/icyspicy-2nd-floor.mp4" type="video/mp4">
+        </video>
+        <div class="reel-label">
+          <span class="reel-floor">2nd Floor</span>
+          <span class="reel-desc">Upper commercial rooms</span>
+        </div>
+      </div>
+
+      <div class="reel-item">
+        <video class="reel-video" loop muted playsinline>
+          <source src="videos/icyspicy-penthouse-.mp4" type="video/mp4">
+        </video>
+        <div class="reel-label">
+          <span class="reel-floor">Terrace</span>
+          <span class="reel-desc">Top floor — premium terrace space</span>
+        </div>
+      </div>
+
+      <div class="reel-item">
+        <video class="reel-video" loop muted playsinline>
+          <source src="videos/icyspicy-basement-.mp4" type="video/mp4">
+        </video>
+        <div class="reel-label">
+          <span class="reel-floor">Basement</span>
+          <span class="reel-desc">Lower level — storage or utility</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  <!-- ── DINING → COMMERCIAL SPACE ─────────────────────────── -->
-  <section class="section dining-section" id="dining">
+  <!-- ── SPACES ────────────────────────────────────────────── -->
+  <section class="section spaces-section" id="spaces">
     <div class="container">
-      <div class="dining-grid">
-        <div class="dining-image">
-          <div class="image-placeholder dark"><span>Ground Floor Image</span></div>
-        </div>
-        <div class="dining-text">
-          <p class="eyebrow">Ground Floor</p>
-          <h2>Commercial Space</h2>
-          <p>The ground floor was purpose-built as a large-format restaurant and commercial kitchen. It offers exceptional frontage on University X Road with direct visibility from Nalini College — one of the busiest pedestrian corridors in Vallabh Vidyanagar.</p>
-          <p>Ideal for a restaurant, café, retail outlet, coaching institute, or any business that benefits from prime student and faculty footfall.</p>
-          <ul class="feature-list">
-            <li>Large open floor plan</li>
-            <li>Commercial kitchen infrastructure in place</li>
-            <li>Direct road frontage — University X Road</li>
-            <li>Opposite Nalini College — guaranteed footfall</li>
-            <li>Available for rent immediately</li>
+      <p class="eyebrow center">What's Inside</p>
+      <h2 class="center">The Spaces</h2>
+      <div class="spaces-grid">
+
+        <div class="space-card dark">
+          <div class="space-floor">Ground Floor</div>
+          <h3>Commercial Space</h3>
+          <p>A large-format commercial space purpose-built for a restaurant — fully fitted with infrastructure in place. Direct frontage on University X Road with unmatched visibility opposite Nalini College.</p>
+          <ul class="space-features">
+            <li>Open plan commercial floor</li>
+            <li>Commercial kitchen infrastructure</li>
+            <li>High street visibility</li>
+            <li>Suitable for restaurant, retail, institute, or office</li>
+            <li>High footfall — student and faculty corridor</li>
           </ul>
         </div>
+
+        <div class="space-card light">
+          <div class="space-floor">Upper Floors</div>
+          <h3>21 Rooms</h3>
+          <p>Twenty-one fully built rooms across the upper floors, ideal for student accommodation, a guest house, hostel, boutique hotel, or corporate housing — in one of the most in-demand rental locations in Vallabh Vidyanagar.</p>
+          <ul class="space-features">
+            <li>21 individual rooms</li>
+            <li>Steps from Nalini College</li>
+            <li>High occupancy demand year-round</li>
+            <li>Suitable for PG, hostel, or hotel use</li>
+            <li>Within Osean Complex</li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- ── RESIDENCES ──────────────────────────────────────────── -->
-  <section class="section residences-section" id="residences">
+  <!-- ── IDEAL FOR ──────────────────────────────────────────── -->
+  <section class="section ideal-section">
     <div class="container">
-      <p class="eyebrow center">Upper Floors</p>
-      <h2 class="center">21 Rooms</h2>
-      <p class="section-sub center">Fully built residential rooms across the upper floors. Suitable for student accommodation, a guest house, hostel, or corporate housing.</p>
-      <div class="amenities-grid">
-        <div class="amenity">
-          <div class="amenity-icon">🏠</div>
-          <strong>21 Total Rooms</strong>
-          <p>Fully built and ready for occupancy across multiple upper floors</p>
-        </div>
-        <div class="amenity">
-          <div class="amenity-icon">📍</div>
-          <strong>Unbeatable Location</strong>
-          <p>Steps from Nalini College and Vallabh Vidyanagar university facilities</p>
-        </div>
-        <div class="amenity">
-          <div class="amenity-icon">🏢</div>
-          <strong>Mixed-Use Building</strong>
-          <p>Ground floor commercial + upper floor rooms — rent one or both</p>
-        </div>
-        <div class="amenity">
-          <div class="amenity-icon">🔑</div>
-          <strong>Available Now</strong>
-          <p>Ready for immediate rental. Future sale also considered.</p>
-        </div>
-        <div class="amenity">
-          <div class="amenity-icon">🚗</div>
-          <strong>Osean Complex</strong>
-          <p>Within a managed complex with parking and shared facilities</p>
-        </div>
-        <div class="amenity">
-          <div class="amenity-icon">📈</div>
-          <strong>Investment Potential</strong>
-          <p>High-demand rental corridor — student and professional tenants</p>
-        </div>
+      <p class="eyebrow center">Use Cases</p>
+      <h2 class="center">Ideal For</h2>
+      <div class="ideal-grid">
+        <div class="ideal-item">🎓 Student Accommodation</div>
+        <div class="ideal-item">🏨 Boutique Hotel / Guest House</div>
+        <div class="ideal-item">🍽 Restaurant / Café</div>
+        <div class="ideal-item">🏢 Corporate Office</div>
+        <div class="ideal-item">📚 Coaching Institute</div>
+        <div class="ideal-item">🏦 Bank / Finance Office</div>
+        <div class="ideal-item">🛍 Retail Showroom</div>
+        <div class="ideal-item">💼 Co-working Space</div>
+        <div class="ideal-item">🏥 Clinic / Diagnostic Centre</div>
       </div>
     </div>
   </section>
 
-  <!-- ── LOCATION ────────────────────────────────────────────── -->
+  <!-- ── LOCATION ───────────────────────────────────────────── -->
   <section class="section location-section" id="location">
     <div class="container">
-      <p class="eyebrow center">Find Us</p>
+      <p class="eyebrow center">Strategic Position</p>
       <h2 class="center">Location</h2>
       <div class="location-grid">
-        <div class="location-details">
-          <div class="address-block">
-            <strong>ICYSPICY</strong>
-            <p>Osean Complex<br>
-            University X Road<br>
-            In front of Nalini College<br>
-            Vallabh Vidyanagar<br>
-            Anand, Gujarat 388120<br>
-            India</p>
+        <div class="location-info">
+          <div class="address-card">
+            <p class="address-label">Address</p>
+            <p class="address-text">
+              ICYSPICY, Osean Complex<br>
+              University X Road<br>
+              In front of Nalini College<br>
+              Vallabh Vidyanagar<br>
+              Anand, Gujarat — 388120
+            </p>
           </div>
-          <div class="nearby">
-            <strong>Nearby</strong>
-            <ul>
-              <li>Nalini College — directly opposite</li>
-              <li>Vallabh Vidyanagar University Campus</li>
-              <li>Anand city centre — 5 min</li>
-            </ul>
+          <div class="distances">
+            <p class="distances-title">Distances</p>
+            <div class="distance-row"><span class="d-label">🏫 Nalini College</span><span class="d-val">Directly opposite</span></div>
+            <div class="distance-row"><span class="d-label">🚆 Anand Railway Jn</span><span class="d-val">~8 km · 12 min</span></div>
+            <div class="distance-row"><span class="d-label">✈️ Vadodara Airport</span><span class="d-val">~40 km · 40 min</span></div>
+            <div class="distance-row"><span class="d-label">✈️ Ahmedabad Airport</span><span class="d-val">~67 km · 65 min</span></div>
+            <div class="distance-row"><span class="d-label">🏙 Anand City Centre</span><span class="d-val">~8 km · 10 min</span></div>
+            <div class="distance-row"><span class="d-label">🏙 Vadodara City</span><span class="d-val">~40 km · 40 min</span></div>
+          </div>
+          <div class="location-why">
+            <p class="distances-title">Why This Location</p>
+            <p>University X Road is the primary corridor connecting Vallabh Vidyanagar's academic institutions. With Nalini College directly opposite and multiple universities within walking distance, the property enjoys year-round demand from students, faculty, and support businesses.</p>
           </div>
         </div>
-        <div class="map-wrap">
+        <div class="map-container">
           <iframe
-            src="https://maps.google.com/maps?q=Osean+Complex+University+X+Road+Vallabh+Vidyanagar+Anand+Gujarat+388120&output=embed&z=16"
-            width="100%"
-            height="400"
-            frameborder="0"
-            style="border:0;"
-            allowfullscreen
-            loading="lazy">
+            src="https://maps.google.com/maps?q=Nalini+College+Vallabh+Vidyanagar+Anand+Gujarat&output=embed&z=16"
+            width="100%" height="100%"
+            frameborder="0" style="border:0"
+            allowfullscreen loading="lazy">
           </iframe>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ── CONTACT ─────────────────────────────────────────────── -->
-  <section class="section contact-section" id="contact">
+  <!-- ── SPECS ─────────────────────────────────────────────── -->
+  <section class="section specs-section" id="specs">
     <div class="container">
-      <p class="eyebrow center">Get in Touch</p>
-      <h2 class="center">Enquire About ICYSPICY</h2>
-      <p class="section-sub center">Interested in renting the commercial space, the rooms, or the full building? Reach out directly.</p>
-      <div class="contact-cards">
-        <a href="tel:+91XXXXXXXXXX" class="contact-card">
-          <div class="contact-card-icon">📞</div>
-          <div class="contact-card-label">Phone / WhatsApp</div>
-          <div class="contact-card-value">+91 XXXXX XXXXX</div>
-          <div class="contact-card-note">Tap to call</div>
-        </a>
-        <a href="mailto:hello@icyspicy.in" class="contact-card">
-          <div class="contact-card-icon">✉</div>
-          <div class="contact-card-label">Email</div>
-          <div class="contact-card-value">hello@icyspicy.in</div>
-          <div class="contact-card-note">Tap to email</div>
-        </a>
+      <p class="eyebrow center">Technical Details</p>
+      <h2 class="center">Specifications</h2>
+      <p class="section-sub center">Detailed specifications to be confirmed with the property owner. Update this table as information becomes available.</p>
+      <div class="specs-table-wrap">
+        <table class="specs-table">
+          <tbody>
+            <tr><td class="spec-key">Property Type</td><td>Fully Commercial</td></tr>
+            <tr><td class="spec-key">Total Rooms</td><td>21 Rooms (Upper Floors)</td></tr>
+            <tr><td class="spec-key">Ground Floor</td><td>Commercial / Restaurant Space</td></tr>
+            <tr><td class="spec-key">Location</td><td>Osean Complex, University X Road, Vallabh Vidyanagar</td></tr>
+            <tr><td class="spec-key">Ownership</td><td>To be confirmed</td></tr>
+            <tr><td class="spec-key">Land Area</td><td>To be confirmed</td></tr>
+            <tr><td class="spec-key">Built-up Area</td><td>To be confirmed</td></tr>
+            <tr><td class="spec-key">Number of Floors</td><td>To be confirmed</td></tr>
+            <tr><td class="spec-key">Parking</td><td>Available within Osean Complex</td></tr>
+            <tr><td class="spec-key">Water Supply</td><td>To be confirmed</td></tr>
+            <tr><td class="spec-key">Power Supply</td><td>To be confirmed</td></tr>
+            <tr><td class="spec-key">Internet</td><td>To be confirmed</td></tr>
+            <tr><td class="spec-key">Occupancy Status</td><td>Vacant · Immediate Possession</td></tr>
+            <tr><td class="spec-key">Price / Rent</td><td>Available Upon Request</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ──────────────────────────────────────────────── -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <strong>ICYSPICY</strong>
-        <p>Osean Complex · University X Road<br>Vallabh Vidyanagar, Gujarat 388120</p>
-      </div>
-      <div class="footer-links">
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#dining">Commercial</a>
-        <a href="#residences">Rooms</a>
-        <a href="#contact">Contact</a>
+  <!-- ── WHY THIS PROPERTY ──────────────────────────────────── -->
+  <section class="section why-section" id="why">
+    <div class="container">
+      <p class="eyebrow center">Investment Case</p>
+      <h2 class="center">Why This Property</h2>
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-num">01</div>
+          <h4>Prime Visibility</h4>
+          <p>Direct frontage on University X Road opposite Nalini College — one of the highest footfall locations in Vallabh Vidyanagar.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">02</div>
+          <h4>Dual Revenue Potential</h4>
+          <p>Ground floor commercial and 21 upper floor rooms can be operated independently or together — maximising rental yield.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">03</div>
+          <h4>Year-Round Demand</h4>
+          <p>The academic corridor guarantees consistent demand from commercial tenants year-round.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">04</div>
+          <h4>Immediate Possession</h4>
+          <p>Vacant and ready. No delays — tenants or buyers can take possession immediately upon agreement.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">05</div>
+          <h4>Flexible Use</h4>
+          <p>Suitable for hospitality, education, healthcare, retail, or office use — rare flexibility in a single commercial property.</p>
+        </div>
+        <div class="why-card">
+          <div class="why-num">06</div>
+          <h4>Future Sale Option</h4>
+          <p>Rent now, buy later. The owner is open to discussing a future sale — making this an attractive long-term investment.</p>
+        </div>
       </div>
     </div>
+  </section>
+
+  <!-- ── FAQ ───────────────────────────────────────────────── -->
+  <section class="section faq-section">
+    <div class="container">
+      <p class="eyebrow center">Common Questions</p>
+      <h2 class="center">FAQ</h2>
+      <div class="faq-flat">
+        <div class="faq-flat-item">
+          <p class="fq">Is the title clear and ownership documented?</p>
+          <p class="fa">Yes. Clear title documentation is available for review upon serious enquiry.</p>
+        </div>
+        <div class="faq-flat-item">
+          <p class="fq">Can I schedule a site visit?</p>
+          <p class="fa">Yes. Contact us via phone or WhatsApp to arrange a convenient visit time.</p>
+        </div>
+        <div class="faq-flat-item">
+          <p class="fq">Can the ground floor and upper floors be rented separately?</p>
+          <p class="fa">Yes. The commercial ground floor and the 21 upper floor rooms can be leased independently or as a complete building.</p>
+        </div>
+        <div class="faq-flat-item">
+          <p class="fq">Is a future sale possible?</p>
+          <p class="fa">Yes. The owner is open to discussing a sale. Please reach out directly to initiate that conversation.</p>
+        </div>
+        <div class="faq-flat-item">
+          <p class="fq">Is the price negotiable?</p>
+          <p class="fa">Serious enquiries are welcome. Discuss terms directly with the owner.</p>
+        </div>
+        <div class="faq-flat-item">
+          <p class="fq">What are the operating costs?</p>
+          <p class="fa">Details on maintenance, utilities, and society charges are available upon request.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ────────────────────────────────────────────── -->
+  <section class="section contact-section" id="contact">
+    <div class="container">
+      <p class="eyebrow center">Get in Touch</p>
+      <h2 class="center">Enquire About This Property</h2>
+      <p class="section-sub center">Interested in renting or buying? Reach out directly — no middlemen.</p>
+      <div class="contact-plain">
+        <div class="contact-line">
+          <span class="contact-type">Phone &amp; WhatsApp</span>
+          <span class="contact-detail">+91 XXXXX XXXXX</span>
+        </div>
+        <div class="contact-line">
+          <span class="contact-type">Email</span>
+          <span class="contact-detail">enquiries@icyspicy.in</span>
+        </div>
+        <div class="contact-line">
+          <span class="contact-type">Address</span>
+          <span class="contact-detail">Osean Complex, University X Road, Vallabh Vidyanagar, Anand, Gujarat 388120</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">ICYSPICY</div>
+        <p>Osean Complex · University X Road<br>Vallabh Vidyanagar, Anand, Gujarat 388120</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#facts">Overview</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#spaces">Spaces</a>
+        <a href="#location">Location</a>
+        <a href="#specs">Specs</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
     <div class="footer-bottom">
-      <p>© 2026 ICYSPICY. All rights reserved.</p>
+      <p>© 2026 ICYSPICY · All rights reserved · Property available for rent and future sale</p>
     </div>
   </footer>
 
