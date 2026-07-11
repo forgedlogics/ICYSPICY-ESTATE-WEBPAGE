@@ -8,9 +8,9 @@ window.addEventListener('scroll', () => {
 
 // ── Scroll reveal — passive, no clicks needed ─────────────
 const revealTargets = document.querySelectorAll(
-  '.fact-card, .gallery-item, .space-card, .why-card, ' +
+  '.fact-card, .why-card, .floor-block, .ph-item, ' +
   '.ideal-item, .distance-row, .faq-flat-item, ' +
-  '.specs-table tr, .video-item, .contact-line'
+  '.specs-table tr, .contact-line'
 );
 
 const observer = new IntersectionObserver((entries) => {
