@@ -8,7 +8,7 @@ window.addEventListener('scroll', () => {
 
 // ── Scroll reveal — passive, no clicks needed ─────────────
 const revealTargets = document.querySelectorAll(
-  '.fact-card, .why-card, .floor-block, .ph-item, .plan-card, ' +
+  '.fact-card, .why-card, .floor-block, .rt-block, .plan-card, ' +
   '.ideal-item, .distance-row, .faq-flat-item, ' +
   '.specs-table tr, .contact-line'
 );
@@ -44,34 +44,17 @@ document.querySelectorAll('.section h2, .section .eyebrow').forEach(el => {
   }, { threshold: 0.2 }).observe(el);
 });
 
-// ── Instagram-style video reel — tap to play, auto-play on scroll ────────────
-document.querySelectorAll('.reel-item').forEach(item => {
-  const video = item.querySelector('.reel-video');
-  if (!video) return;
-
-  // Auto-play when 60% visible
-  const obs = new IntersectionObserver((entries) => {
+// ── Room-type reels — autoplay on scroll, tap to pause ─────
+document.querySelectorAll('.rt-video').forEach(video => {
+  const io = new IntersectionObserver((entries) => {
     entries.forEach(e => {
-      if (e.isIntersecting) {
-        video.play().catch(() => {});
-        item.classList.add('playing');
-      } else {
-        video.pause();
-        item.classList.remove('playing');
-      }
+      if (e.isIntersecting) { video.play().catch(()=>{}); }
+      else { video.pause(); }
     });
   }, { threshold: 0.6 });
-
-  obs.observe(item);
-
-  // Tap to pause / resume
-  item.addEventListener('click', () => {
-    if (video.paused) {
-      video.play().catch(() => {});
-      item.classList.add('playing');
-    } else {
-      video.pause();
-      item.classList.remove('playing');
-    }
+  io.observe(video);
+  video.closest('.rt-slide').addEventListener('click', (ev) => {
+    ev.preventDefault();
+    if (video.paused) video.play().catch(()=>{}); else video.pause();
   });
 });
