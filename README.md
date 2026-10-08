@@ -2,6 +2,10 @@
 
 A media-rich digital property listing experience designed to make a complex commercial property easy to explore online.
 
+## View the live website
+
+👉 **[Open the ICYSPICY Estate Website](https://forgedlogics.github.io/ICYSPICY-ESTATE-WEBPAGE/)**
+
 ## Project focus
 
 The site turns property information into a structured buyer journey: a high-impact introduction, key facts, floor-by-floor exploration, room categories, floor plans, location context, and an enquiry path.
